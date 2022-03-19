@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="countdown"
+        android:title="play time"
+        android:entryValues="@array/entries_countdown_values"
+        android:entries="@array/entries_countdown_strings"
+        android:defaultValue="30"
+        android:summary="the time you want to play within a round"
+        />
+</PreferenceScreen>

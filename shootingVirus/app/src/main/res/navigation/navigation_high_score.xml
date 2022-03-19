@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_high_score"
+    app:startDestination="@id/highScoreMainFragment">
+
+    <fragment
+        android:id="@+id/highScoreMainFragment"
+        android:name="com.example.shootingvirus.HighScoreMain30Fragment"
+        android:label="fragment_high_score_main"
+        tools:layout="@layout/fragment_high_score_main30" >
+        <action
+            android:id="@+id/action_highScoreMainFragment_to_highScoreMain60Fragment"
+            app:destination="@id/highScoreMain60Fragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/highScoreMainFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_highScoreMainFragment_to_highScoreDetailFragment"
+            app:destination="@id/highScoreDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/highScoreDetailFragment"
+        android:name="com.example.shootingvirus.HighScoreDetailFragment"
+        android:label="fragment_high_score_detail"
+        tools:layout="@layout/fragment_high_score_detail" >
+        <argument
+            android:name="scoreEntry"
+            app:argType="com.example.shootingvirus.database.ScoreEntry"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/highScoreMain60Fragment"
+        android:name="com.example.shootingvirus.HighScoreMain60Fragment"
+        android:label="fragment_high_score_main60"
+        tools:layout="@layout/fragment_high_score_main60" >
+        <action
+            android:id="@+id/action_highScoreMain60Fragment_to_highScoreDetailFragment"
+            app:destination="@id/highScoreDetailFragment" />
+        <action
+            android:id="@+id/action_highScoreMain60Fragment_to_highScoreMainFragment"
+            app:destination="@id/highScoreMainFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/highScoreMain60Fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
